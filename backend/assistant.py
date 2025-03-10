@@ -1,13 +1,16 @@
 from flask import Flask, request, jsonify
 from flask_cors import CORS
 import openai
+import os
 
 app = Flask(__name__)
 CORS(app)  # Allow frontend to communicate with backend
 
 # Azure OpenAI Configuration
-AZURE_OPENAI_ENDPOINT = "https://beyondcorporation.openai.azure.com/"
-AZURE_OPENAI_API_KEY = ""
+AZURE_OPENAI_ENDPOINT = os.environ.get("AZURE_OPENAI_ENDPOINT")
+
+
+AZURE_OPENAI_API_KEY = os.environ.get("AZURE_OPENAI_API_KEY")
 DEPLOYMENT_NAME = "gpt-4o"  # Update this with your deployment name
 
 # Set OpenAI client for Azure
