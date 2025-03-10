@@ -7,9 +7,7 @@ CORS(app)  # Allow frontend to communicate with backend
 
 # Azure OpenAI Configuration
 AZURE_OPENAI_ENDPOINT = "https://beyondcorporation.openai.azure.com/"
-import os
-
-AZURE_OPENAI_API_KEY = os.environ.get("AZURE_OPENAI_API_KEY")
+AZURE_OPENAI_API_KEY = ""
 DEPLOYMENT_NAME = "gpt-4o"  # Update this with your deployment name
 
 # Set OpenAI client for Azure
